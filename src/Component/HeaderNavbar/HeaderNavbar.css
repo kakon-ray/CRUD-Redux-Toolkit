@@ -1,0 +1,54 @@
+/* ====================================================
+Bootstrap Navbar Customization
+======================================================= */
+
+.bg-light {
+  background-color: white !important;
+}
+
+.nav-link {
+  margin-right: 5px;
+}
+@media (max-width: 1198px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    width: 90%;
+    left: 5%;
+    right: 0;
+    z-index: 99;
+  }
+  .nav-link {
+    margin-left: 5%;
+  }
+  .navbar-toggler {
+    border: none !important;
+  }
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important;
+  }
+}
+
+/* ====================================================
+menu hover style start
+======================================================= */
+
+.link-style::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.link-style:hover::after {
+  width: 100%;
+}

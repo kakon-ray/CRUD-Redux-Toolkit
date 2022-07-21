@@ -7,9 +7,9 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 
 const Product = ({ title, description, img }) => {
   return (
-    <div className="col-md-3">
+    <div className="col-md-4">
       <Card>
-        <Card.Img variant="top" src={img} />
+        <Card.Img variant="top" src={img} style={{ height: "400px" }} />
         <Card.Body className="text-center">
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>

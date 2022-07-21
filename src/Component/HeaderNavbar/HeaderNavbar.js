@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
+import { Link } from "react-router-dom";
 const HeaderNavbar = () => {
   return (
     <Navbar bg="light" expand="xl">
@@ -13,9 +13,13 @@ const HeaderNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home" className="link-style">
+            <Link to="/" className="nav-link link-style">
               Home
-            </Nav.Link>
+            </Link>
+            <Link to="/addproduct" className="nav-link link-style">
+              Add Product
+            </Link>
+
             <Nav.Link href="#link" className="link-style">
               About Us
             </Nav.Link>
@@ -23,17 +27,12 @@ const HeaderNavbar = () => {
               Order
             </Nav.Link>
             <Nav.Link href="#link" className="link-style">
-              Product
+              All Product
             </Nav.Link>
             <Nav.Link href="#link" className="link-style">
               Services
             </Nav.Link>
-            <Nav.Link href="#link" className="link-style">
-              Our Tem
-            </Nav.Link>
-            <Nav.Link href="#link" className="link-style">
-              Projects
-            </Nav.Link>
+
             <Nav.Link href="#link" className="link-style">
               Contact
             </Nav.Link>

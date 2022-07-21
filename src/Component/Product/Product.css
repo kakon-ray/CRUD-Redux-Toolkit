@@ -5,3 +5,9 @@
 .btn-container button {
   margin: 5px;
 }
+.card-body {
+  padding: 20px;
+}
+.card {
+  margin: 10px 0;
+}

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../Products/ProductsSlice";
 import "./AddProduct.css";
 
+// this is use unic id create
+import { v4 as uuidv4 } from "uuid";
 const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [imgLink, setImgLink] = useState("");
@@ -12,13 +14,10 @@ const AddProduct = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const productNumber = useSelector((state) => state.productReducer.product);
-
   const addProductSubmit = (e) => {
     e.preventDefault();
 
-    const productCurrentNumber = productNumber.length + 1;
-    const product = { title, img: imgLink, desc, id: productCurrentNumber };
+    const product = { title, img: imgLink, desc, id: uuidv4() };
 
     dispatch(addProduct(product));
     navigate("/", { replace: true });

@@ -3,7 +3,10 @@ import HomePageBanner from "../../Component/HomePageBanner/HomePageBanner";
 import Product from "../../Component/Product/Product";
 import "./Home.css";
 import product1 from "../../assets/img/product6.f19b14e6.png";
+import { useSelector } from "react-redux";
 const Home = () => {
+  const products = useSelector((state) => state.productReducer.product);
+
   return (
     <React.Fragment>
       <HomePageBanner />
@@ -14,26 +17,17 @@ const Home = () => {
             <h1 className="text-center product-main-title">Our Products</h1>
           </div>
           <div className="row">
-            <Product
-              title="Green Dress For Woman"
-              description="Green Dress For Woman Green Dress For Woman"
-              img={product1}
-            />
-            <Product
-              title="Green Dress For Woman"
-              description="Green Dress For Woman Green Dress For Woman"
-              img={product1}
-            />
-            <Product
-              title="Green Dress For Woman"
-              description="Green Dress For Woman Green Dress For Woman"
-              img={product1}
-            />
-            <Product
-              title="Green Dress For Woman"
-              description="Green Dress For Woman Green Dress For Woman"
-              img={product1}
-            />
+            {products &&
+              products.map((product) => {
+                return (
+                  <Product
+                    title={product.title}
+                    description={product.desc}
+                    img={product.img}
+                    id={product.id}
+                  />
+                );
+              })}
           </div>
         </div>
       </section>

@@ -22,7 +22,7 @@ const Home = () => {
                 return (
                   <Product
                     title={product.title}
-                    description={product.desc}
+                    desc={product.desc}
                     img={product.img}
                     id={product.id}
                   />

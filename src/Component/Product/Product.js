@@ -6,8 +6,9 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../Pages/Products/ProductsSlice";
+import { Link } from "react-router-dom";
 
-const Product = ({ title, description, img, id }) => {
+const Product = ({ title, desc, img, id }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
@@ -20,11 +21,13 @@ const Product = ({ title, description, img, id }) => {
         <Card.Img variant="top" src={img} style={{ height: "300px" }} />
         <Card.Body className="text-center">
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
+          <Card.Text>{desc}</Card.Text>
         </Card.Body>
         <div className="btn-container">
           <ButtonGroup>
-            <ToggleButton variant="secondary">Update</ToggleButton>
+            <Link to="editProduct" state={{ title, desc, img, id }}>
+              <ToggleButton variant="secondary">Update</ToggleButton>
+            </Link>
             <ToggleButton variant="danger" onClick={() => handleDelete(id)}>
               Delete
             </ToggleButton>

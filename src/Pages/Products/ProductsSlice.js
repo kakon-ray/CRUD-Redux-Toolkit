@@ -30,9 +30,29 @@ export const productSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
+
+    updateProduct: (state, action) => {
+      const { id, title, desc, img } = action.payload;
+      //   const isbookexist = state.product.filter((item) => item.id === id);
+
+      //   if (isbookexist) {
+      //     isbookexist[0].title = title;
+      //     isbookexist[0].desc = desc;
+      //     isbookexist[0].img = img;
+      //   }
+
+      state.product.forEach((item) => {
+        if (item.id === id) {
+          item.title = title;
+          item.desc = desc;
+          item.img = img;
+        }
+      });
+    },
   },
 });
 
-export const { showProduct, addProduct, deleteProduct } = productSlice.actions;
+export const { showProduct, addProduct, deleteProduct, updateProduct } =
+  productSlice.actions;
 
 export default productSlice.reducer;
